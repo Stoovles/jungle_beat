@@ -79,5 +79,37 @@ class LinkedListTest < Minitest::Test
     assert_equal "suu doop boop deep", linkedList.to_string
   end
 
+  def test_it_can_includes
+    linkedList = LinkedList.new
+    linkedList.append("suu")
+    linkedList.append("doop")
+    linkedList.append("deep")
+
+    assert_equal true, linkedList.includes?("suu")
+    assert_equal false, linkedList.includes?("nope")
+  end
+
+  def test_it_can_find
+    linkedList = LinkedList.new
+    linkedList.append("suu")
+    linkedList.append("doop")
+    linkedList.append("deep")
+    linkedList.append("shi")
+
+    assert_equal "doop deep shi", linkedList.find(1, 3)
+    assert_equal "doop", linkedList.find(1, 1)
+  end
+
+  def test_it_can_pop
+    linkedList = LinkedList.new
+    linkedList.append("suu")
+    linkedList.append("doop")
+    linkedList.append("deep")
+    linkedList.append("shi")
+    linkedList.pop
+
+    assert_equal "suu doop deep", linkedList.to_string
+  end
+
 
 end

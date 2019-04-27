@@ -76,8 +76,39 @@ class LinkedList
     end
   end
 
+  def find(index, int)
+    current_node = @head
+    index.times do
+      current_node = @head.next
+    end
+    elements = []
+    (int - 1).times do
+      elements << current_node.data
+      current_node = current_node.next
+    end
+    elements << current_node.data
+    elements.join(" ")
+  end
 
+  def includes?(data)
+    current_node = @head
+    while current_node.next != nil
+      if current_node.data == data
+        return true
+      end
+      current_node = current_node.next
+    end
+    return false
+  end
 
+  def pop
+    current_node = @head
+    while current_node.next != nil
+      previous_node = current_node
+      current_node = current_node.next
+    end
+    previous_node.next = nil
+  end
 
 
 end
