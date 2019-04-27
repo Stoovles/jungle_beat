@@ -20,7 +20,7 @@ class NodeTest < Minitest::Test
   def test_it_can_next_node
     node = Node.new("plop")
 
-    assert_equal nil, node.next_node
+    assert_equal nil, node.next
   end
 
 end
