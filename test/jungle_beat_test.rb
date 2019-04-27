@@ -35,4 +35,11 @@ class JungleBeatTest < Minitest::Test
     assert_equal 6, jungleBeat.list.count
   end
 
+  def test_it_can_play
+    jungleBeat = JungleBeat.new
+    jungleBeat.append("deep doo ditt")
+
+    jungleBeat.play
+  end
+
 end
